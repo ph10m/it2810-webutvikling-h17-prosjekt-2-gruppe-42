@@ -1,5 +1,5 @@
 function newPost(postImg, postText){
-	return { img: 'images/'+postImg, text: postText }
+	return { img: 'images/'+postImg, text: postText };
 }
 
 var indexPosts = [
@@ -32,11 +32,8 @@ var cakePosts = [
 	newPost('kake.jpg', 'Enda en oppskrift..?')
 ];
 
-
-module.exports = {
-	indexPosts,
-	wafflePosts,
-	cookiePosts,
-	candyPosts,
-	cakePosts
-};
+exports.indexPosts = indexPosts;
+exports.wafflePosts = wafflePosts;
+exports.cookiePosts = cookiePosts;
+exports.candyPosts = candyPosts;
+exports.cakePosts = cakePosts;
