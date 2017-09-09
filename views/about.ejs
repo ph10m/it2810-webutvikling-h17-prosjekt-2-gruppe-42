@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Vaffel</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Kreon:300" rel="stylesheet">
+	<% include partials/head %>
 </head>
 <body>
-<div class='nav'>
-    <div class="nav_item"><a href="/">Hjem</a></div>
-    <div class="nav_item"><a href="/waffle">Vafler</a></div>
-    <div class="nav_item"><a href="/cookie">Kjeks</a></div>
-    <div class="nav_item"><a href="/cake">Kaker</a></div>
-    <div class="nav_item"><a href="/candy">Godteri</a></div>
-    <div class="nav_item"><a href="/about">Om oss</a></div>
-</div>
-
-<h1>Overskrift</h1>
+<% include partials/navbar %>
+<h1><%= Title %></h1>
 <div class="content">
     <div class="post">
         <div class="picture">
