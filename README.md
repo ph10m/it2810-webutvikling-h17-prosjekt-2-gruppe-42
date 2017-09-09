@@ -1,21 +1,14 @@
 # Setup
+Install missing modules
 ```npm install```
+Start server
 ```npm start```
 
-### To add new html files
+### To add new pages with routes
 add your file in ```views/yourfile.html```
-add a route to your file in ```routes/yourfile.js```
-- it should look like this:
-```
-var express = require('express');
-var router = express.Router();
 
-/* GET your page. */
-router.get('/yourpage', function(req, res, next) {
-  res.render('yourfile', { title: 'Title here' });
-});
-
-module.exports = router;
+add a route to your file in ```routes/index.js```
 ```
-open ```app.js``` and go to the block at ```line 26```
-add a new line: ```app.use('/yourpage', yourfile);```
+new_route('yourfile');
+```
+done!
