@@ -13,9 +13,9 @@
 	</table>
 	<h3>Antall porsjoner</h3>
 	<div class="portions_box">
-		<button onClick="updatePortions()" class="portions reduce">-</button>
+		<button onClick="decrease()" class="portions decrease">-</button>
 		<input id="portions_view" type="text" value="<%= DefaultPortions %>"></input>
-		<button class="portions increase">+</button>
+		<button onClick="increase()" class="portions increase">+</button>
 	</div>
 </div>
 
