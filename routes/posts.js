@@ -10,8 +10,7 @@ var indexPosts = [
 ];
 
 var wafflePosts = [
-	newPost('vaffel.png', 'Megagod oppskrift på vaffler!!1 :)'),
-	newPost('vaffel.png', 'Enda en oppskrift..?')
+	newPost('vaffel.png', 'Megagod oppskrift på vaffler!!1 :)')
 ];
 
 

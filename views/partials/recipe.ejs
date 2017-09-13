@@ -1,0 +1,38 @@
+<!--
+<% Posts.forEach(function(Post){ %>
+	<div class="post">
+		<div class="picture">
+			<img src='<%= Post.img %>'></img>
+		</div>
+		<div class="text">
+			<%= Post.text %>
+		</div>
+	</div>
+<% }); %>-->
+
+<div class="ingredients">
+	<h2>Ingredienser</h2>
+	<table>
+		<tbody>
+        <% Ingredients.forEach(function(Ingredient){ %>
+		<tr>
+			<td><%= Ingredient.amount %></td>
+			<td><%= Ingredient.unit %></td>
+			<td><%= Ingredient.ingredient %></td>
+		</tr>
+        <% }); %>
+		</tbody>
+
+	</table>
+
+	<h2>Antall porsjoner</h2>
+</div>
+
+<div class="instructions">
+	<h2>Fremgangsmåte</h2>
+	<ul>
+		<% Instructions.forEach(function(Instruction){ %>
+		<li><%= Instruction %></li>
+		<%})%>
+	</ul>
+</div>
