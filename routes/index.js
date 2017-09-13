@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var pagePosts = require('./posts');
+var ingredients = require('../views/recipes/ingredients');
+var instructions = require('../views/recipes/instructions');
 
 // Set up a new route with .ejs render and title of page
 function new_route(path, title){
@@ -21,13 +23,14 @@ function new_post_page(path, title, posts){
   });
 }
 
-function new_recipe_page(path, title, posts, ingredients, instructions){
+function new_recipe_page(path, title, posts, ingr, inst, defaultPortions){
     router.get('/'+path, function(req, res, next) {
         res.render('recipes', {
             Title: title,
             Posts: posts,
-            Ingredients: ingredients,
-            Instructions: instructions
+            Ingredients: ingr,
+			Instructions: inst,
+			DefaultPortions: defaultPortions
         });
     });
 }
@@ -39,10 +42,10 @@ var waffleRecipe = [
 ]
 
 new_post_page('', 'Kaffekos', pagePosts.indexPosts);
-new_recipe_page('waffle', 'Vaffel', pagePosts.wafflePosts, waffleRecipe, ['kkk', 'kkk']);
-new_post_page('cake', 'Kake', pagePosts.cakePosts);
-new_post_page('cookie', 'Kjeks', pagePosts.cookiePosts);
-new_post_page('candy', 'Godteri', pagePosts.candyPosts);
+new_recipe_page('waffle', 'Vaffel', pagePosts.wafflePosts, ingredients.waffle, ['kkk', 'kkk'], 1);
+new_recipe_page('cake', 'Kake', pagePosts.cakePosts, ingredients.cake, ['kkk', 'kkk'], 12);
+new_recipe_page('cookie', 'Kjeks', pagePosts.cookiePosts, ingredients.cookies, ['kkk', 'kkk'], 12);
+new_recipe_page('candy', 'Drops', pagePosts.candyPosts, ingredients.candy, ['kkk', 'kkk'], 1);
 
 new_route('about', 'Om oss');
 

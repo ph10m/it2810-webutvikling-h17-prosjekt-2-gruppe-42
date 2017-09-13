@@ -1,18 +1,6 @@
-<!--
-<% Posts.forEach(function(Post){ %>
-	<div class="post">
-		<div class="picture">
-			<img src='<%= Post.img %>'></img>
-		</div>
-		<div class="text">
-			<%= Post.text %>
-		</div>
-	</div>
-<% }); %>-->
-
 <div class="ingredients">
 	<h2>Ingredienser</h2>
-	<table>
+	<table class="ingredient_list">
 		<tbody>
         <% Ingredients.forEach(function(Ingredient){ %>
 		<tr>
@@ -22,10 +10,13 @@
 		</tr>
         <% }); %>
 		</tbody>
-
 	</table>
-
-	<h2>Antall porsjoner</h2>
+	<h3>Antall porsjoner</h3>
+	<div class="portions_box">
+		<button onClick="updatePortions()" class="portions reduce">-</button>
+		<input id="portions_view" type="text" value="<%= DefaultPortions %>"></input>
+		<button class="portions increase">+</button>
+	</div>
 </div>
 
 <div class="instructions">
