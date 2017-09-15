@@ -1,32 +1,46 @@
-// <button class="portions reduce">-</button>
-// <input class="portions_view" type="text" value="<%= DefaultPortions %>"></input>
-// <button class="portions increase">+</button>
-//
-$(document).ready(function() {
+// jquery loops: https://stackoverflow.com/a/4735360
+
+var defPortionValues = [];
+var defPortions = -1;
+
+function dynamicPortions(defaultPortions){
+	$('.dynamic-amount').each(function(i, obj) {
+		defPortionValues.push(obj.textContent);
+	});
+	defPortions = defaultPortions;
+	console.log("Default portions: " + defPortions);
+	console.log(defPortionValues);
     $("#portions_view").on("change paste keyup", function() {
         updatePortions();
     });
-});
+}
 
 function decrease() {
-    let boxval = $("#portions_view").val();
-	if(boxval>1) {
-		boxval -= 1;
-	}
-	$("#portions_view").val(boxval);
+	$("#portions_view").val(function(i,oldval) {
+		return oldval>1 ? --oldval : oldval;
+	});
 	updatePortions();
 }
 
 function increase() {
-    let boxval = eval($("#portions_view").val());
-	boxval += 1;
-    $("#portions_view").val(boxval);
+    $("#portions_view").val(function(i,oldval) {
+		return ++oldval;
+	});
     updatePortions();
 }
 
-
-
 function updatePortions(){
-	let boxval = $("#portions_view").val();
-	console.log(boxval);
+	let currentVal = eval($("#portions_view").val());
+	let scaling = currentVal/defPortions;
+	console.log("Scaling: " + scaling);
+	$('.dynamic-amount').each(function(i, obj) {
+		var scaledVal = 0;
+		if (obj.textContent > 100) {
+			scaledVal = Math.ceil(defPortionValues[i]*scaling);
+		}
+		else {
+			scaledVal = (Math.round((defPortionValues[i]*scaling)*2)/2).toFixed(1)
+		}
+		obj.textContent = scaledVal;
+	});
 }

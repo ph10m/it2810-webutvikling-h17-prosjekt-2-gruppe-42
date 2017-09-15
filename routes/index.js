@@ -35,17 +35,15 @@ function new_recipe_page(path, title, posts, ingr, inst, defaultPortions){
     });
 }
 
-var waffleRecipe = [
-    { amount: 3, unit: "dl", ingredient: "mel"},
-    { amount: 2.5, unit: "dl", ingredient: "melk"},
-    { amount: 1, unit: "tsp", ingredient: "bakepulver"}
-]
-
 new_post_page('', 'Kaffekos', pagePosts.indexPosts);
-new_recipe_page('waffle', 'Vaffel', pagePosts.wafflePosts, ingredients.waffle, ['kkk', 'kkk'], 1);
-new_recipe_page('cake', 'Kake', pagePosts.cakePosts, ingredients.cake, ['kkk', 'kkk'], 12);
-new_recipe_page('cookie', 'Kjeks', pagePosts.cookiePosts, ingredients.cookies, ['kkk', 'kkk'], 12);
-new_recipe_page('candy', 'Drops', pagePosts.candyPosts, ingredients.candy, ['kkk', 'kkk'], 1);
+
+new_recipe_page('waffle', 'Vaffel', pagePosts.wafflePosts, ingredients.waffle, instructions.waffle, 3);
+
+new_recipe_page('cake', 'Kake', pagePosts.cakePosts, ingredients.cake, instructions.cake, 12);
+
+new_recipe_page('cookie', 'Kjeks', pagePosts.cookiePosts, ingredients.cookies, instructions.cookies, 8);
+
+new_recipe_page('candy', 'Drops', pagePosts.candyPosts, ingredients.candy, instructions.candy, 10);
 
 new_route('about', 'Om oss');
 

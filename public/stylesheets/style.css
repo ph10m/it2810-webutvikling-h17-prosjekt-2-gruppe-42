@@ -52,6 +52,10 @@ a:hover {
     display: flex;
 	padding: 3em 0
 }
+.howto {
+	display: flex;
+	padding: 3em 0;
+}
 
 .picture img {
     border-radius: 50%;
@@ -71,6 +75,7 @@ a:hover {
 }
 
 .fadebar {
+	pointer-events: none;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -89,11 +94,22 @@ a:hover {
 	font-family: 'Kreon', serif;
 	font-size: 1.25em;
 }
+.instructions h2{
+	font-size: 2em;
+}
+.instruction_list {
+	font-family: 'Kreon', serif;
+	font-size: 1.25em;
+}
+
 
 @media screen and (max-width: 1225px) {
     .post {
         margin-right: 5%;
     }
+	.howto {
+		margin-right: 5%;
+	}
     .content {
         margin-left: 5%;
         margin-right: 15%;
@@ -116,6 +132,10 @@ a:hover {
         flex-direction: column;
         margin-right: 0;
     }
+	.howto {
+		flex-direction: column;
+		margin-right: 0;
+	}
 
     .content {
         margin-right: 5%;

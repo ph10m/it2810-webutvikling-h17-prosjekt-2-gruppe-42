@@ -1,6 +1,7 @@
 var waffle = [
     "Når du lager verdens beste vafler starter du med å piske egg og sukker godt sammen. Deretter rører du inn melk og" +
-    " vann. Bland sammen alt det tørre og pisk det inn i væsken til du får en klumpfri røre.",
+    " vann.",
+	"Bland sammen alt det tørre og pisk det inn i væsken til du får en klumpfri røre.",
     "La røren svelle i ca 15 minutter.",
     "Tilsett smeltet smør og stek vaflene lys brune. ",
     "Server med rømme og syltetøy eller smør og brunost. "
@@ -54,3 +55,8 @@ var candy = [
     "Klipp pølsene opp til passende drops.",
     "La dropsene avkjøle seg, før de legges i tett boks eller glass."
 ];
+
+exports.waffle = waffle;
+exports.cake = cake;
+exports.cookies = cookies;
+exports.candy = candy;
