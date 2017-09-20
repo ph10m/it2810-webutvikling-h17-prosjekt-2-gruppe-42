@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 4rem;
     text-align: center;
 }
 
@@ -87,7 +87,11 @@ a:hover {
     );
 }
 
-.ingredients h2{
+.instructions {
+    padding-left: 3em;
+}
+
+.ingredients h2{
 	font-size: 2em;
 }
 .ingredient_list {
@@ -100,8 +104,56 @@ a:hover {
 .instruction_list {
 	font-family: 'Kreon', serif;
 	font-size: 1.25em;
+    padding: 1em;
 }
 
+.portions_box {
+    display: flex;
+}
+
+.portions {
+    display: flex;
+    background-color: bisque;
+    border-color: bisque;
+    height: 3em;
+    width: 3em;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.vertical_stroke {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 2em;
+    height: 0.3em;
+    z-index: 2;
+}
+
+.horizontal_stroke {
+    width: 0.3em;
+    height: 1.6em;
+    background-color: black;
+    bottom: 1em;
+    z-index: 1;
+}
+
+
+/*This code hides the little plus and minus in the box*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#portions_view {
+    font-family: 'Kreon', serif;
+    font-size: 1.25em;
+    margin: 0 0.5em;
+    width: 100%;
+    text-align: center;
+}
 
 @media screen and (max-width: 1225px) {
     .post {
@@ -176,4 +228,11 @@ a:hover {
         bottom: 7%;
         height: 10%;
     }
+    .instructions {
+        padding-left: 0;
+    }
+    #portions_view {
+        width: 4em;
+    }
+
 }
