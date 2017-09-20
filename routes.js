@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var pagePosts = require('./posts');
-var ingredients = require('../views/recipes/ingredients');
-var instructions = require('../views/recipes/instructions');
+var pagePosts = require('./public/posts/posts');
+var ingredients = require('./public/posts/ingredients');
+var instructions = require('./public/posts/instructions');
 
 // Set up a new route with .ejs render and title of page
 function new_route(path, title){
@@ -14,15 +14,19 @@ function new_route(path, title){
 // Set up a posts page to render on top of dynamic.ejs
 // all content in the posts is found in routes/posts.js
 // which are stored in a json format.
-function new_post_page(path, title, posts){
+// url is the link the the local endpoint
+function new_post_page(path, title, posts, url){
   router.get('/'+path, function(req, res, next) {
     res.render('dynamic', {
 			Title: title,
-			Posts: posts
+			Posts: posts,
+			URL: url
 		});
   });
 }
 
+// Used to create recipe pages
+// Similar to new_post_page with more arguments
 function new_recipe_page(path, title, posts, ingr, inst, defaultPortions){
     router.get('/'+path, function(req, res, next) {
         res.render('recipes', {
@@ -46,6 +50,6 @@ new_recipe_page('cookie', 'Kjeks', pagePosts.cookiePosts, ingredients.cookies, i
 new_recipe_page('candy', 'Drops', pagePosts.candyPosts, ingredients.candy, instructions.candy, 10);
 
 new_route('about', 'Om oss');
-
+new_route('docs', 'Dokumentasjon');
 
 module.exports = router;

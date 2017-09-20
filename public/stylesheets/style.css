@@ -74,6 +74,10 @@ a:hover {
     font-family: "Amatic SC", sans-serif;;
 }
 
+#doclink {
+	color: red;
+}
+
 .fadebar {
 	pointer-events: none;
     position: fixed;

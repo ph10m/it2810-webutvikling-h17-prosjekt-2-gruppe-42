@@ -1,8 +1,10 @@
 <% Posts.forEach(function(Post){ %>
 	<div class="post">
-		<div class="picture">
-			<img src='<%= Post.img %>'></img>
-		</div>
+		<a href='<%= Post.URL %>'>
+			<div class="picture">
+				<img src='<%= Post.img %>'></img>
+			</div>
+		</a>
 		<div class="text">
 			<%= Post.text %>
 		</div>
