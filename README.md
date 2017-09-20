@@ -5,7 +5,7 @@ Node.js med Express og EJS som view engine. EJS (Embedded JavaScript) støtter v
 
 ```
 <% if (something) { %>
-  <h1><%= console.log(something) %></h1>
+  <h1>Standard title with another dynamic title: <%= something %></h1>
 <% } %>
 ```
 
