@@ -15,19 +15,21 @@ function dynamicPortions(defaultPortions){
     });
 }
 
-function decrease() {
-	$("#portions_view").val(function(i,oldval) {
-		return oldval>1 ? --oldval : oldval;
-	});
-	updatePortions();
-}
 
-function increase() {
-    $("#portions_view").val(function(i,oldval) {
-		return ++oldval;
+$(document).ready(function() {
+	$('.decrease').click(function(){
+		$("#portions_view").val(function(i,oldval) {
+			return oldval>1 ? --oldval : oldval;
+		});
+		updatePortions();
 	});
-    updatePortions();
-}
+    $('.increase').click(function() {
+		$("#portions_view").val(function(i,oldval) {
+			return ++oldval;
+		});
+		updatePortions();
+	});
+});
 
 function updatePortions(){
 	let currentVal = eval($("#portions_view").val());
