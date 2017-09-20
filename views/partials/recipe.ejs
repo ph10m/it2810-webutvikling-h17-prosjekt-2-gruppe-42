@@ -1,0 +1,38 @@
+<div class="howto">
+<div class="ingredients">
+	<h2>Ingredienser</h2>
+	<table class="ingredient_list">
+		<tbody>
+        <% Ingredients.forEach(function(Ingredient){ %>
+		<tr class="dynamic-ingredient">
+			<td class="dynamic-amount"><%= Ingredient.amount %></td>
+			<td><%= Ingredient.unit %></td>
+			<td><%= Ingredient.ingredient %></td>
+		</tr>
+        <% }); %>
+		</tbody>
+	</table>
+	<h3>Antall porsjoner</h3>
+	<div class="portions_box">
+		<button class="portions decrease">
+			<div class="vertical_stroke"></div>
+		</button>
+		<input id="portions_view" type="number" value="<%= DefaultPortions %>"></input>
+		<button class="portions increase">
+			<div class="vertical_stroke">
+				<div class="horizontal_stroke"></div>
+			</div>
+		</button>
+	</div>
+</div>
+
+<div class="instructions">
+	<h2>Fremgangsmåte</h2>
+	<ul class="instruction_list">
+		<% Instructions.forEach(function(Instruction){ %>
+		<li><%= Instruction %></li>
+		<%})%>
+	</ul>
+</div>
+</div>
+<script>dynamicPortions(<%= DefaultPortions %>)</script>

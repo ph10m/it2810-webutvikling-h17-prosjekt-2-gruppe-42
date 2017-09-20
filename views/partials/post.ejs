@@ -1,0 +1,12 @@
+<% Posts.forEach(function(Post){ %>
+	<div class="post">
+		<a href='<%= Post.URL %>'>
+			<div class="picture">
+				<img src='<%= Post.img %>'></img>
+			</div>
+		</a>
+		<div class="text">
+			<%= Post.text %>
+		</div>
+	</div>
+<% }); %>
