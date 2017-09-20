@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<% include partials/head %>
+    <script src="scripts/ajax.js"></script>
 </head>
 <body>
 <% include partials/navbar %>
@@ -14,6 +15,15 @@
         <div class="text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper condimentum lorem et congue. Pellentesque est nulla, porttitor et tristique nec, pulvinar quis quam. Fusce efficitur velit id massa semper, sed porttitor nulla gravida. Aliquam congue magna vel finibus vehicula. Nulla porta consectetur nisl, id pretium quam ultricies sed. Phasellus et eleifend quam. Maecenas efficitur mauris arcu, pulvinar malesuada odio dapibus sed. Quisque pellentesque pharetra sapien, pharetra sodales leo laoreet sed. Sed efficitur, arcu a cursus volutpat, arcu erat efficitur turpis, imperdiet suscipit tellus risus vel neque. Quisque dignissim ultrices lectus, lacinia feugiat eros molestie quis. Nullam nec urna et orci sodales porta quis a magna.
         </div>
+    </div>
+
+
+    <div class="post">
+        <button type="button" onclick="loadDoc()">Dokumentasjon</button>
+        <div class="text" id="ajax_text">
+
+        </div>
+
     </div>
 </div>
 <div class="fadebar"></div>
