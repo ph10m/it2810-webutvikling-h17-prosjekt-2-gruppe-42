@@ -13,6 +13,7 @@ input[type=number] {
     text-align: center;
     background-color: bisque;
     border-color: bisque;
+    border-radius: 15%;
     width: 35px !important;
     height: 35px !important;
     font-size: 30px;
