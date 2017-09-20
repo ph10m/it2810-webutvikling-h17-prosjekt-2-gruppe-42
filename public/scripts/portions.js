@@ -23,7 +23,7 @@ $(document).ready(function() {
 		});
 		updatePortions();
 	});
-    $('increase').click(function() {
+    $('.increase').click(function() {
 		$("#portions_view").val(function(i,oldval) {
 			return ++oldval;
 		});
