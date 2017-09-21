@@ -14,15 +14,9 @@
 	</table>
 	<h3>Antall porsjoner</h3>
 	<div class="portions_box">
-		<button class="portions decrease">
-			<div class="vertical_stroke"></div>
-		</button>
-		<input id="portions_view" type="number" value="<%= DefaultPortions %>"></input>
-		<button class="portions increase">
-			<div class="vertical_stroke">
-				<div class="horizontal_stroke"></div>
-			</div>
-		</button>
+		<input type="button" value="-" class="portions decrease">
+		<input id="portions_view" type="number" value="<%= DefaultPortions %>">
+		<input type="button" value="+" class="portions increase">
 	</div>
 </div>
 
