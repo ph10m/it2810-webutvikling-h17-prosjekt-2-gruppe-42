@@ -113,7 +113,7 @@ a:hover {
     padding: 1em;
 }
 
-@media screen and (max-width: 1225px) {
+@media screen and (max-width: 1325px) {
     .post {
         margin-right: 5%;
     }
